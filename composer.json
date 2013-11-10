@@ -1,0 +1,21 @@
+{
+    "name": "trueaxiom/zf2x_application",
+    "description": "zf2x application component integration",
+    "license": "MIT",
+    "require": {
+        "trueaxiom/zf2x" : "1.0.*"
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Richard Jennings",
+            "email": "rich@trueaxiom.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Application\\": "application/src"
+        }
+    }
+}
