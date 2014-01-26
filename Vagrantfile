@@ -10,7 +10,6 @@ Vagrant.configure("2") do |config|
     :inline => "sudo apt-get update; sudo DEBIAN_FRONTEND=noninteractive apt-get -q -y install lamp-server^ git"
   config.vm.provision :shell,
     :inline => "sudo apt-get -q -y install php5-curl php5-intl"
-
   config.vm.provision :shell,
     :inline => "sudo a2enmod rewrite"
   config.vm.provision :shell,
@@ -34,7 +33,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell,
     :inline => "cd /var/www/; php composer.phar update --no-interaction;"
   config.vm.provision :shell,
-    :inline => "service mysql start; mysql -u root -e 'CREATE DATABASE IF NOT EXISTS zf2x_application';"
+    :inline => "sudo service mysql start; mysql -u root -e 'CREATE DATABASE IF NOT EXISTS zf2x_application';"
   config.vm.provision :shell,
     :inline => "cd /var/www/vendor/bin; php doctrine-module orm:schema-tool:update --force"
   config.vm.provision :shell,
